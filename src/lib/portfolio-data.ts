@@ -42,6 +42,7 @@ interface Project {
   description: string;
   tags: string[];
   githubLink: string;
+  huggingFaceLink?: string;
 }
 
 export const personalInfo: PersonalInfo = {
@@ -137,7 +138,8 @@ export const projects: Project[] = [
     title: "NayaLLM",
     description: "A specialized Large Language Model (LLM) fine-tuned on a custom legal dataset for contract analysis and summarization. The project involves data preprocessing, model training, and evaluation.",
     tags: ["LLM", "NLP", "PyTorch", "Hugging Face"],
-    githubLink: "https://github.com/example/NayaLLM"
+    githubLink: "https://github.com/example/NayaLLM",
+    huggingFaceLink: "https://huggingface.co/Rak-shit/Naya-Model-Summeriser"
   },
   {
     title: "BSP Shayak Chatbot",
