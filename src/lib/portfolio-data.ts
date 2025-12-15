@@ -1,3 +1,4 @@
+
 import { Code, BrainCircuit, Database, Cloud, GitBranch, Github, Linkedin, Mail, BarChart, Settings, GanttChartSquare } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -30,6 +31,13 @@ interface SkillCategory {
   items: SkillItem[];
 }
 
+interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+}
+
 interface Project {
   title: string;
   description: string;
@@ -44,7 +52,7 @@ export const personalInfo: PersonalInfo = {
   summary: "A highly motivated and detail-oriented data science aspirant with hands-on experience in machine learning, data analysis, and AI application development. Proven ability to leverage data to drive insights and build intelligent systems, with a strong foundation in statistical modeling and a passion for solving complex problems.",
   avatarId: "avatar",
   socials: [
-    { icon: Github, url: "https://github.com/example" },
+    { icon: Github, url: "https://github.com/Mr-RAKSHIT-2004-GUPTA" },
     { icon: Linkedin, url: "https://linkedin.com/in/example" },
     { icon: Mail, url: "mailto:rakshit@example.com" },
   ]
