@@ -36,12 +36,14 @@ export function ProjectsGallery() {
               <p className="text-muted-foreground">{project.description}</p>
             </CardContent>
             <CardFooter className="flex flex-col sm:flex-row gap-2">
-              <Button asChild className="w-full" variant="outline">
-                <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2" />
-                  View on GitHub
-                </Link>
-              </Button>
+              {project.githubLink && (
+                <Button asChild className="w-full" variant="outline">
+                  <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2" />
+                    View on GitHub
+                  </Link>
+                </Button>
+              )}
               {project.huggingFaceLink && (
                   <Button asChild className="w-full" variant="outline">
                     <Link href={project.huggingFaceLink} target="_blank" rel="noopener noreferrer">
