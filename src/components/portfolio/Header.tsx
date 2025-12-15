@@ -11,6 +11,18 @@ import { navLinks } from '@/lib/portfolio-data';
 export function Header() {
   const [isSheetOpen, setSheetOpen] = useState(false);
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (isSheetOpen) {
+      setSheetOpen(false);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
@@ -26,6 +38,7 @@ export function Header() {
               key={link.name}
               href={link.href}
               className="transition-colors hover:text-primary"
+              onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.name}
             </Link>
@@ -46,7 +59,7 @@ export function Header() {
                     key={link.name}
                     href={link.href}
                     className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                    onClick={() => setSheetOpen(false)}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                   >
                     {link.name}
                   </Link>

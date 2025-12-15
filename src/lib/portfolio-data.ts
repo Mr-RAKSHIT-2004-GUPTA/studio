@@ -63,7 +63,6 @@ export const navLinks: NavLink[] = [
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
-  { name: "Analyzer", href: "#analyzer" },
 ];
 
 export const skills: SkillCategory[] = [
@@ -113,7 +112,7 @@ export const skills: SkillCategory[] = [
     items: [
       { name: "Docker", proficiency: 80 },
       { name: "Git & GitHub", proficiency: 95 },
-      { name: "GCP", proficiency: 70 },
+      { name: "AWS", proficiency: 70 },
       { name: "CI/CD", proficiency: 65 },
     ],
   },
