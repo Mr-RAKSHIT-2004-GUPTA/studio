@@ -149,6 +149,6 @@ export const projects: Project[] = [
     title: "Sensor Fault Detection",
     description: "An end-to-end machine learning project to detect faults in industrial sensors. The system uses a classification model to predict failures, deployed as a web service with a CI/CD pipeline.",
     tags: ["Machine Learning", "Classification", "Docker", "GCP"],
-    githubLink: "https://github.com/example/Sensor-Fault-Detection"
+    githubLink: "https://github.com/Mr-RAKSHIT-2004-GUPTA/Sensor-Project"
   }
 ];
