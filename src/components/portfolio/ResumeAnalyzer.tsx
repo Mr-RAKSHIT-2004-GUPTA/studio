@@ -12,7 +12,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
-import { handleResumeAnalysis } from '@/app/actions';
+import { handleResumeAnalysis } from '@/app/actions/resume';
 
 const formSchema = z.object({
   resumeText: z.string().min(100, {
