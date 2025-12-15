@@ -53,8 +53,8 @@ export const personalInfo: PersonalInfo = {
   avatarId: "avatar",
   socials: [
     { icon: Github, url: "https://github.com/Mr-RAKSHIT-2004-GUPTA" },
-    { icon: Linkedin, url: "https://linkedin.com/in/example" },
-    { icon: Mail, url: "mailto:rakshit@example.com" },
+    { icon: Linkedin, url: "https://www.linkedin.com/in/rakshit-gupta-0623221a0/" },
+    { icon: Mail, url: "mailto:rakshit2004gupta@gmail.com" },
   ]
 };
 
