@@ -143,7 +143,7 @@ export const projects: Project[] = [
     title: "BSP Shayak Chatbot",
     description: "An AI-powered chatbot designed to assist customers with service inquiries. Built using retrieval-augmented generation (RAG) to provide accurate answers from a knowledge base.",
     tags: ["Chatbot", "RAG", "FastAPI", "NLP"],
-    githubLink: "https://github.com/example/BSP-Shayak-Chatbot"
+    githubLink: "https://github.com/Mr-RAKSHIT-2004-GUPTA/bsp_gatepass_chatbot"
   },
   {
     title: "Sensor Fault Detection",
