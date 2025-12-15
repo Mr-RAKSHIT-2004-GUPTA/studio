@@ -3,7 +3,7 @@
     {
       "id": "avatar",
       "description": "User avatar placeholder",
-      "imageUrl": "/images/avatar.jpg",
+      "imageUrl": "/images/avatar.jpeg",
       "imageHint": "professional portrait"
     }
   ]
