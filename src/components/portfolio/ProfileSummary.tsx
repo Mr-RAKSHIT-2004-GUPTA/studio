@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Download } from 'lucide-react';
 
 import { Section } from '@/components/common/Section';
 import { Button } from '@/components/ui/button';
 import { personalInfo } from '@/lib/portfolio-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { cn } from '@/lib/utils';
 
 export function ProfileSummary() {
   const avatarImage = PlaceHolderImages.find(img => img.id === 'avatar');
@@ -36,7 +36,7 @@ export function ProfileSummary() {
           <div className="mt-6 space-y-7 text-base text-muted-foreground">
             <p>{personalInfo.summary}</p>
           </div>
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex flex-wrap gap-4 items-center">
             {personalInfo.socials.map((social) => (
               <Button key={social.url} variant="outline" size="icon" asChild>
                 <Link href={social.url} target="_blank" rel="noopener noreferrer">
@@ -44,6 +44,12 @@ export function ProfileSummary() {
                 </Link>
               </Button>
             ))}
+             <Button asChild>
+                <Link href="/resume/resume.pdf" download>
+                  <Download className="mr-2 h-5 w-5" />
+                  Download CV
+                </Link>
+              </Button>
           </div>
         </div>
       </div>
