@@ -29,13 +29,15 @@ const prompt = ai.definePrompt({
   name: 'optimizeResumePrompt',
   input: {schema: OptimizeResumeInputSchema},
   output: {schema: OptimizeResumeOutputSchema},
-  prompt: `You are an expert resume optimization consultant acting as a hiring manager for data science roles.
+  prompt: `You are an expert resume optimization consultant and a hiring manager for data science roles.
+  Your task is to provide a list of clear, actionable suggestions to improve a candidate's resume.
+  Focus on clarity, quantifiable impact, keyword optimization for ATS, and overall presentation.
 
-  Review the following resume and provide a list of actionable suggestions to improve its chances of success.
-  Focus on areas like clarity, impact, keywords, and overall presentation.
+  Analyze the following resume text and provide your feedback as a list of suggestions.
+  Each suggestion should be a complete sentence.
 
   Resume:
-  {{resumeText}}`,
+  {{{resumeText}}}`,
 });
 
 const optimizeResumeFlow = ai.defineFlow(
@@ -46,6 +48,9 @@ const optimizeResumeFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    return output!;
+    if (!output) {
+      throw new Error('The AI model did not return a valid output.');
+    }
+    return output;
   }
 );

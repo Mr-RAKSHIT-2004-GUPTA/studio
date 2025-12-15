@@ -38,13 +38,13 @@ export function ResumeAnalyzer() {
     const result = await handleResumeAnalysis(values.resumeText);
     setIsLoading(false);
 
-    if (result.success) {
-      setAnalysisResult(result.data!);
+    if (result.success && result.data) {
+      setAnalysisResult(result.data);
     } else {
       toast({
         variant: 'destructive',
         title: 'Analysis Failed',
-        description: result.error,
+        description: result.error || 'An unknown error occurred.',
       });
     }
   }
