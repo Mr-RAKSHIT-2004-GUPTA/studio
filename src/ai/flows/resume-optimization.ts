@@ -10,6 +10,7 @@
 
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
+import {googleAI} from '@genkit-ai/google-genai';
 
 const OptimizeResumeInputSchema = z.object({
   resumeText: z.string().describe('The text content of the resume to be optimized.'),
@@ -29,6 +30,7 @@ const prompt = ai.definePrompt({
   name: 'optimizeResumePrompt',
   input: {schema: OptimizeResumeInputSchema},
   output: {schema: OptimizeResumeOutputSchema},
+  model: googleAI('gemini-1.5-flash'),
   prompt: `You are an expert resume optimization consultant and a hiring manager for data science roles.
   Your task is to provide a list of clear, actionable suggestions to improve a candidate's resume.
   Focus on clarity, quantifiable impact, keyword optimization for ATS, and overall presentation.
