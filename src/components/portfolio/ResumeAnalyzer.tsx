@@ -22,7 +22,7 @@ const formSchema = z.object({
 
 export function ResumeAnalyzer() {
   const [isLoading, setIsLoading] = useState(false);
-  const [analysisResult, setAnalysisResult] = useState('');
+  const [analysisResult, setAnalysisResult] = useState<string[]>([]);
   const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -34,7 +34,7 @@ export function ResumeAnalyzer() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
-    setAnalysisResult('');
+    setAnalysisResult([]);
     const result = await handleResumeAnalysis(values.resumeText);
     setIsLoading(false);
 
@@ -97,7 +97,7 @@ export function ResumeAnalyzer() {
           </CardContent>
         </Card>
         
-        {(isLoading || analysisResult) && (
+        {(isLoading || analysisResult.length > 0) && (
           <Card className="mt-8">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -111,9 +111,11 @@ export function ResumeAnalyzer() {
                   <Loader2 className="h-8 w-8 animate-spin text-primary" />
                 </div>
               ) : (
-                <div className="prose prose-sm dark:prose-invert max-w-none whitespace-pre-wrap font-sans">
-                  {analysisResult}
-                </div>
+                <ul className="prose prose-sm dark:prose-invert max-w-none list-disc space-y-2 pl-5 font-sans">
+                  {analysisResult.map((suggestion, index) => (
+                    <li key={index}>{suggestion}</li>
+                  ))}
+                </ul>
               )}
             </CardContent>
           </Card>

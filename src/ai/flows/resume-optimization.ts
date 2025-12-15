@@ -17,7 +17,7 @@ const OptimizeResumeInputSchema = z.object({
 export type OptimizeResumeInput = z.infer<typeof OptimizeResumeInputSchema>;
 
 const OptimizeResumeOutputSchema = z.object({
-  suggestions: z.string().describe('AI-powered suggestions on how to improve the resume.'),
+  suggestions: z.array(z.string()).describe('A list of actionable suggestions to improve the resume.'),
 });
 export type OptimizeResumeOutput = z.infer<typeof OptimizeResumeOutputSchema>;
 
@@ -29,9 +29,9 @@ const prompt = ai.definePrompt({
   name: 'optimizeResumePrompt',
   input: {schema: OptimizeResumeInputSchema},
   output: {schema: OptimizeResumeOutputSchema},
-  prompt: `You are an expert resume optimization consultant specializing in data science roles.
+  prompt: `You are an expert resume optimization consultant acting as a hiring manager for data science roles.
 
-  Review the following resume and provide actionable suggestions to improve its chances of success.
+  Review the following resume and provide a list of actionable suggestions to improve its chances of success.
   Focus on areas like clarity, impact, keywords, and overall presentation.
 
   Resume:
